@@ -1,4 +1,4 @@
-From 94bd6beafd3847467c7ecb951604f815a66b1298 Mon Sep 17 00:00:00 2001
+From 6ed3fd305183e316a66a5937d42821524b10f732 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 24 Nov 2016 11:41:00 -0500
 Subject: [PATCH 08/20] disable metrics by default
@@ -21,5 +21,5 @@ index 59f83ab219..40466c59e9 100644
      private boolean mNativeInitialized;
  
 -- 
-2.28.0
+2.29.2
 

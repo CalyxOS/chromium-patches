@@ -1,4 +1,4 @@
-From 3fe1b8feb6fb7c158be25cc0a2d530b6e863b79e Mon Sep 17 00:00:00 2001
+From 9c5206291361b7c4b9a9d090122e17ac5d932d2e Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 25 Dec 2018 16:19:51 -0500
 Subject: [PATCH 04/20] disable seed-based field trials
@@ -23,5 +23,5 @@ index 2388d8788b..adf06d452f 100644
  
    platform_field_trials->SetupFeatureControllingFieldTrials(used_seed,
 -- 
-2.28.0
+2.29.2
 

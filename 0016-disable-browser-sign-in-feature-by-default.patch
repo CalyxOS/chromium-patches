@@ -1,4 +1,4 @@
-From 0833cfe4767547e994d6256f0df6bb70aba5ce2c Mon Sep 17 00:00:00 2001
+From 41b5523c7b94f5b8a087bf138a42855fbc7f366a Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 12 Jul 2019 04:23:18 -0400
 Subject: [PATCH 16/20] disable browser sign in feature by default
@@ -9,10 +9,10 @@ Subject: [PATCH 16/20] disable browser sign in feature by default
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/chrome/browser/signin/account_consistency_mode_manager.cc b/chrome/browser/signin/account_consistency_mode_manager.cc
-index bee334fbef..d3217eb87e 100644
+index 627d217582..ace703c452 100644
 --- a/chrome/browser/signin/account_consistency_mode_manager.cc
 +++ b/chrome/browser/signin/account_consistency_mode_manager.cc
-@@ -97,7 +97,7 @@ void AccountConsistencyModeManager::RegisterProfilePrefs(
+@@ -118,7 +118,7 @@ void AccountConsistencyModeManager::RegisterProfilePrefs(
  #if BUILDFLAG(ENABLE_DICE_SUPPORT)
    registry->RegisterBooleanPref(kDiceMigrationCompletePref, false);
  #endif
@@ -22,10 +22,10 @@ index bee334fbef..d3217eb87e 100644
  
  // static
 diff --git a/components/signin/internal/identity_manager/primary_account_manager.cc b/components/signin/internal/identity_manager/primary_account_manager.cc
-index 88de9c4238..5cb3d4a6f0 100644
+index c2ab6437c4..7952b8941b 100644
 --- a/components/signin/internal/identity_manager/primary_account_manager.cc
 +++ b/components/signin/internal/identity_manager/primary_account_manager.cc
-@@ -56,7 +56,7 @@ void PrimaryAccountManager::RegisterProfilePrefs(PrefRegistrySimple* registry) {
+@@ -57,7 +57,7 @@ void PrimaryAccountManager::RegisterProfilePrefs(PrefRegistrySimple* registry) {
    registry->RegisterBooleanPref(prefs::kGoogleServicesConsentedToSync, false);
    registry->RegisterBooleanPref(prefs::kAutologinEnabled, true);
    registry->RegisterListPref(prefs::kReverseAutologinRejectedEmailList);
@@ -35,5 +35,5 @@ index 88de9c4238..5cb3d4a6f0 100644
  }
  
 -- 
-2.28.0
+2.29.2
 

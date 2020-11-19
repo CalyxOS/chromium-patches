@@ -1,4 +1,4 @@
-From a3e03f18697a06df8851791b53183ddc49598303 Mon Sep 17 00:00:00 2001
+From 5a9c9dc50b02eb358995d695968128a9691aa494 Mon Sep 17 00:00:00 2001
 From: Chirayu Desai <chirayudesai1@gmail.com>
 Date: Sat, 8 Feb 2020 01:21:14 +0530
 Subject: [PATCH 03/20] Disable data reduction proxy promo
@@ -33,5 +33,5 @@ index b785ac427f..fdc3f02889 100644
  
      /** Returns true if the snackbar promo is allowed to be shown. */
 -- 
-2.28.0
+2.29.2
 

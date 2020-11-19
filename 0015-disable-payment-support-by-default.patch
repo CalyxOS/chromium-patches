@@ -1,4 +1,4 @@
-From f3a9d5f22201695dd8d9e1d00b8dd89b24ba4e4f Mon Sep 17 00:00:00 2001
+From 1f4165d79f8401aba83d5d5f89c55f1d1e0761aa Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 18 Jun 2019 22:28:53 -0400
 Subject: [PATCH 15/20] disable payment support by default
@@ -21,5 +21,5 @@ index 9590d9494e..787ff68af1 100644
  }
  
 -- 
-2.28.0
+2.29.2
 
