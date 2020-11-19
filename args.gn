@@ -2,13 +2,13 @@ target_os = "android"
 target_cpu = "arm64"
 
 android_channel = "stable"
-android_default_version_name = "86.0.4240.198"
-android_default_version_code = "424019800"
+android_default_version_name = "87.0.4280.66"
+android_default_version_code = "428006600"
 
 is_component_build = false
 is_debug = false
 is_official_build = true
-symbol_level = 0
+symbol_level = 1
 blink_symbol_level = 0
 fieldtrial_testing_like_official_build = true
 use_official_google_api_keys = false
