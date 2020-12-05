@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "599e957b_e7964ae8",
+        "filename": "args.gn",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2020-12-05T16:40:44Z",
+      "side": 1,
+      "message": "The final APKs end up getting 33 at the end instead of the 00 here.",
+      "revId": "273966096be2d816826abe5483c5270e17820627",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0",
+      "unresolved": true
+    }
+  ]
+}
