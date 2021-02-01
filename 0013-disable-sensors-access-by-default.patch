@@ -1,4 +1,4 @@
-From 8c57bef1ad815603a36f8cc3c51b6e7db8485527 Mon Sep 17 00:00:00 2001
+From d33171aeb46ad144d0a23d27a518d47836ebeba3 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 16 Jun 2019 15:57:29 -0400
 Subject: [PATCH 13/20] disable sensors access by default
@@ -8,7 +8,7 @@ Subject: [PATCH 13/20] disable sensors access by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/content_settings/core/browser/content_settings_registry.cc b/components/content_settings/core/browser/content_settings_registry.cc
-index 24fdb2c10f..a09e0f0af4 100644
+index c4c777cd8d49..76f80c0c9ed1 100644
 --- a/components/content_settings/core/browser/content_settings_registry.cc
 +++ b/components/content_settings/core/browser/content_settings_registry.cc
 @@ -417,7 +417,7 @@ void ContentSettingsRegistry::Init() {
@@ -17,9 +17,9 @@ index 24fdb2c10f..a09e0f0af4 100644
    // contexts.
 -  Register(ContentSettingsType::SENSORS, "sensors", CONTENT_SETTING_ALLOW,
 +  Register(ContentSettingsType::SENSORS, "sensors", CONTENT_SETTING_BLOCK,
-            WebsiteSettingsInfo::UNSYNCABLE, WhitelistedSchemes(),
+            WebsiteSettingsInfo::UNSYNCABLE, AllowlistedSchemes(),
             ValidSettings(CONTENT_SETTING_ALLOW, CONTENT_SETTING_BLOCK),
             WebsiteSettingsInfo::SINGLE_ORIGIN_ONLY_SCOPE,
 -- 
-2.29.2
+2.20.1
 

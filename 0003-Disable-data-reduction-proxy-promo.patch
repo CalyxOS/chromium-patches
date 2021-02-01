@@ -1,4 +1,4 @@
-From 5a9c9dc50b02eb358995d695968128a9691aa494 Mon Sep 17 00:00:00 2001
+From c131fa8ed35e38092d406ddecf7a7dae8b85d9ac Mon Sep 17 00:00:00 2001
 From: Chirayu Desai <chirayudesai1@gmail.com>
 Date: Sat, 8 Feb 2020 01:21:14 +0530
 Subject: [PATCH 03/20] Disable data reduction proxy promo
@@ -8,7 +8,7 @@ Subject: [PATCH 03/20] Disable data reduction proxy promo
  1 file changed, 6 insertions(+), 4 deletions(-)
 
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/net/spdyproxy/DataReductionProxySettings.java b/chrome/android/java/src/org/chromium/chrome/browser/net/spdyproxy/DataReductionProxySettings.java
-index b785ac427f..fdc3f02889 100644
+index b785ac427f28..fdc3f02889ee 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/net/spdyproxy/DataReductionProxySettings.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/net/spdyproxy/DataReductionProxySettings.java
 @@ -130,14 +130,16 @@ public class DataReductionProxySettings {
@@ -33,5 +33,5 @@ index b785ac427f..fdc3f02889 100644
  
      /** Returns true if the snackbar promo is allowed to be shown. */
 -- 
-2.29.2
+2.20.1
 

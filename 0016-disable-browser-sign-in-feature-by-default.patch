@@ -1,4 +1,4 @@
-From 41b5523c7b94f5b8a087bf138a42855fbc7f366a Mon Sep 17 00:00:00 2001
+From d3c1a77ef53cc234306d92876f8dddaa48fdfef7 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 12 Jul 2019 04:23:18 -0400
 Subject: [PATCH 16/20] disable browser sign in feature by default
@@ -9,7 +9,7 @@ Subject: [PATCH 16/20] disable browser sign in feature by default
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/chrome/browser/signin/account_consistency_mode_manager.cc b/chrome/browser/signin/account_consistency_mode_manager.cc
-index 627d217582..ace703c452 100644
+index 8c0099eef030..33f91be31f5f 100644
 --- a/chrome/browser/signin/account_consistency_mode_manager.cc
 +++ b/chrome/browser/signin/account_consistency_mode_manager.cc
 @@ -118,7 +118,7 @@ void AccountConsistencyModeManager::RegisterProfilePrefs(
@@ -22,7 +22,7 @@ index 627d217582..ace703c452 100644
  
  // static
 diff --git a/components/signin/internal/identity_manager/primary_account_manager.cc b/components/signin/internal/identity_manager/primary_account_manager.cc
-index c2ab6437c4..7952b8941b 100644
+index 8f5528f06c98..a07ded2651e9 100644
 --- a/components/signin/internal/identity_manager/primary_account_manager.cc
 +++ b/components/signin/internal/identity_manager/primary_account_manager.cc
 @@ -57,7 +57,7 @@ void PrimaryAccountManager::RegisterProfilePrefs(PrefRegistrySimple* registry) {
@@ -35,5 +35,5 @@ index c2ab6437c4..7952b8941b 100644
  }
  
 -- 
-2.29.2
+2.20.1
 

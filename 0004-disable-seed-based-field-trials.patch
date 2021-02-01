@@ -1,4 +1,4 @@
-From 9c5206291361b7c4b9a9d090122e17ac5d932d2e Mon Sep 17 00:00:00 2001
+From e10fbba7da442f3e204ec18acbb2b1bed346f50c Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 25 Dec 2018 16:19:51 -0500
 Subject: [PATCH 04/20] disable seed-based field trials
@@ -8,20 +8,20 @@ Subject: [PATCH 04/20] disable seed-based field trials
  1 file changed, 2 insertions(+)
 
 diff --git a/components/variations/service/variations_field_trial_creator.cc b/components/variations/service/variations_field_trial_creator.cc
-index 2388d8788b..adf06d452f 100644
+index 25e566164483..727beea140e3 100644
 --- a/components/variations/service/variations_field_trial_creator.cc
 +++ b/components/variations/service/variations_field_trial_creator.cc
-@@ -521,8 +521,10 @@ bool VariationsFieldTrialCreator::SetupFieldTrials(
+@@ -523,8 +523,10 @@ bool VariationsFieldTrialCreator::SetupFieldTrials(
  #endif  // BUILDFLAG(FIELDTRIAL_TESTING_ENABLED)
    bool used_seed = false;
    if (!used_testing_config) {
 +#if defined(FIELDTRIAL_SEED_ENABLED)
-     used_seed = CreateTrialsFromSeed(std::move(low_entropy_provider),
-                                      feature_list.get(), safe_seed_manager);
+     used_seed = CreateTrialsFromSeed(*low_entropy_provider, feature_list.get(),
+                                      safe_seed_manager);
 +#endif
    }
  
-   platform_field_trials->SetupFeatureControllingFieldTrials(used_seed,
+   platform_field_trials->SetupFeatureControllingFieldTrials(
 -- 
-2.29.2
+2.20.1
 

@@ -1,4 +1,4 @@
-From 1932481bdbc33d1fd08092674429b8d782478c3b Mon Sep 17 00:00:00 2001
+From ac932fdf99c5a4ad64d026934c776e376b131b9f Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 8 Mar 2018 22:43:12 -0500
 Subject: [PATCH 11/20] disable article suggestions feature by default
@@ -9,7 +9,7 @@ Subject: [PATCH 11/20] disable article suggestions feature by default
  2 files changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/components/feed/core/shared_prefs/pref_names.cc b/components/feed/core/shared_prefs/pref_names.cc
-index 7f4f7a9141..eb527a275e 100644
+index 7f4f7a91413b..eb527a275e83 100644
 --- a/components/feed/core/shared_prefs/pref_names.cc
 +++ b/components/feed/core/shared_prefs/pref_names.cc
 @@ -19,8 +19,8 @@ const char kEnableSnippets[] = "ntp_snippets.enable";
@@ -24,7 +24,7 @@ index 7f4f7a9141..eb527a275e 100644
  
  }  // namespace prefs
 diff --git a/components/ntp_snippets/features.cc b/components/ntp_snippets/features.cc
-index 226d09dcb9..50234b43c0 100644
+index 226d09dcb96a..50234b43c032 100644
 --- a/components/ntp_snippets/features.cc
 +++ b/components/ntp_snippets/features.cc
 @@ -39,7 +39,7 @@ const base::Feature* const kAllFeatures[] = {
@@ -37,5 +37,5 @@ index 226d09dcb9..50234b43c0 100644
  const base::Feature kRemoteSuggestionsEmulateM58FetchingSchedule{
      "RemoteSuggestionsEmulateM58FetchingSchedule",
 -- 
-2.29.2
+2.20.1
 
