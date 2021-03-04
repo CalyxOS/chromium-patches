@@ -13,6 +13,8 @@ blink_symbol_level = 0
 fieldtrial_testing_like_official_build = true
 use_official_google_api_keys = false
 
+enable_chrome_module = false
+
 # enable patented codecs
 ffmpeg_branding = "Chrome"
 proprietary_codecs = true
