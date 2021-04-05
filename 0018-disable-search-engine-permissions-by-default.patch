@@ -1,4 +1,4 @@
-From 4dc15ea9769b088b358fcdbeb3457c2501d9a8fe Mon Sep 17 00:00:00 2001
+From 4f02f779fd4907f80ecc71e1b18956deb91dfd73 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 1 Aug 2017 20:29:56 -0400
 Subject: [PATCH 18/20] disable search engine permissions by default

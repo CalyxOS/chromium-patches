@@ -1,4 +1,4 @@
-From bc9a7b584cff570189776468b1950cf3b755a376 Mon Sep 17 00:00:00 2001
+From d817770a12e2ae3eec2b2cba9d303304e374e4e0 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 12 Jul 2019 05:22:11 -0400
 Subject: [PATCH 17/20] disable safe browsing reporting opt-in by default
@@ -8,10 +8,10 @@ Subject: [PATCH 17/20] disable safe browsing reporting opt-in by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/safe_browsing/core/common/safe_browsing_prefs.cc b/components/safe_browsing/core/common/safe_browsing_prefs.cc
-index 6ee732836584..399786d1a818 100644
+index e210755f3548..e71963753fd4 100644
 --- a/components/safe_browsing/core/common/safe_browsing_prefs.cc
 +++ b/components/safe_browsing/core/common/safe_browsing_prefs.cc
-@@ -190,7 +190,7 @@ void RegisterProfilePrefs(PrefRegistrySimple* registry) {
+@@ -192,7 +192,7 @@ void RegisterProfilePrefs(PrefRegistrySimple* registry) {
    registry->RegisterBooleanPref(
        prefs::kSafeBrowsingSawInterstitialScoutReporting, false);
    registry->RegisterBooleanPref(

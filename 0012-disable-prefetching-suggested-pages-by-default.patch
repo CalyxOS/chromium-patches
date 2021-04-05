@@ -1,4 +1,4 @@
-From 5bb341e8f071262c4cacb2bde08de91c843455ee Mon Sep 17 00:00:00 2001
+From 69f32f5d7a54a8e55bd1148b0a6d856e2f618192 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 12 Jul 2019 04:10:21 -0400
 Subject: [PATCH 12/20] disable prefetching suggested pages by default
@@ -8,11 +8,11 @@ Subject: [PATCH 12/20] disable prefetching suggested pages by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/offline_pages/core/offline_page_feature.cc b/components/offline_pages/core/offline_page_feature.cc
-index 6728c0ffcc12..317745c7b5ee 100644
+index 38a3858c6a94..0760fa619a5b 100644
 --- a/components/offline_pages/core/offline_page_feature.cc
 +++ b/components/offline_pages/core/offline_page_feature.cc
-@@ -39,7 +39,7 @@ const base::Feature kOfflinePagesResourceBasedSnapshotFeature{
-     "OfflinePagesResourceBasedSnapshot", base::FEATURE_DISABLED_BY_DEFAULT};
+@@ -30,7 +30,7 @@ const base::Feature kOfflinePagesLivePageSharingFeature{
+     "OfflinePagesLivePageSharing", base::FEATURE_DISABLED_BY_DEFAULT};
  
  const base::Feature kPrefetchingOfflinePagesFeature{
 -    "OfflinePagesPrefetching", base::FEATURE_ENABLED_BY_DEFAULT};

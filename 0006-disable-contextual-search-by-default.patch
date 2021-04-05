@@ -1,4 +1,4 @@
-From f217cbe83fb1f9309c9c97f9ceb160a8584216eb Mon Sep 17 00:00:00 2001
+From 31bc116ceff90d0b7787f9efacddd98119b9aca5 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 23 Nov 2016 09:26:51 -0500
 Subject: [PATCH 06/20] disable contextual search by default
@@ -22,10 +22,10 @@ index 46bacf442c06..78064663ad4c 100644
  
      /**
 diff --git a/chrome/browser/profiles/profile.cc b/chrome/browser/profiles/profile.cc
-index 103c8c04b728..a09acb11a394 100644
+index c5999dc92fdc..b0c5e60edbbc 100644
 --- a/chrome/browser/profiles/profile.cc
 +++ b/chrome/browser/profiles/profile.cc
-@@ -282,7 +282,7 @@ void Profile::RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry) {
+@@ -253,7 +253,7 @@ void Profile::RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry) {
  #if defined(OS_ANDROID)
    registry->RegisterStringPref(
        prefs::kContextualSearchEnabled,
