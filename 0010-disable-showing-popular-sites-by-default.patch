@@ -1,4 +1,4 @@
-From ad985b3bab8b743b172584a28c56bde435f47b2d Mon Sep 17 00:00:00 2001
+From 11cc85ce9804cb04ad770f12b4ce10d978bc4835 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 6 Mar 2018 00:27:41 -0500
 Subject: [PATCH 10/20] disable showing popular sites by default
