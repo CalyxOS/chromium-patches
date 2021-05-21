@@ -26,7 +26,7 @@ enable_remoting = false
 enable_reporting = true # Build broken without this, COEP related
 enable_resource_allowlist_generation = false
 
-trichrome_certdigest = "a856485079bcb357bfbe69ba19a9ba43cd0ad9ab226752c780b6888afd48216b"
+trichrome_certdigest = "ddf40eb01a77ce7722b4a30be6cd5df6876d308a7341d1282596f521e83ae36e"
 
 # Need to migrate to own namespace, but without losing user data
 chrome_public_manifest_package = "org.chromium.chrome"
