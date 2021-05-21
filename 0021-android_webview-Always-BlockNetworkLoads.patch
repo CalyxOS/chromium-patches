@@ -1,0 +1,101 @@
+From 517b739e19d5a355dd2e01e204c784d0ea201035 Mon Sep 17 00:00:00 2001
+From: Chirayu Desai <chirayu@calyxinstitute.org>
+Date: Fri, 21 May 2021 17:48:52 -0400
+Subject: [PATCH] android_webview: Always BlockNetworkLoads
+
+---
+ .../android_webview/AwServiceWorkerSettings.java      | 11 +++++++----
+ .../src/org/chromium/android_webview/AwSettings.java  | 11 +++++++----
+ 2 files changed, 14 insertions(+), 8 deletions(-)
+
+diff --git a/android_webview/java/src/org/chromium/android_webview/AwServiceWorkerSettings.java b/android_webview/java/src/org/chromium/android_webview/AwServiceWorkerSettings.java
+index fdd0193c122c..f04fac4f9853 100644
+--- a/android_webview/java/src/org/chromium/android_webview/AwServiceWorkerSettings.java
++++ b/android_webview/java/src/org/chromium/android_webview/AwServiceWorkerSettings.java
+@@ -21,7 +21,7 @@ import org.chromium.base.annotations.JNINamespace;
+ @JNINamespace("android_webview")
+ public class AwServiceWorkerSettings {
+     private static final String LOGTAG = AwServiceWorkerSettings.class.getSimpleName();
+-    private static final boolean TRACE = false;
++    private static final boolean TRACE = true;
+ 
+     private int mCacheMode = WebSettings.LOAD_DEFAULT;
+     private boolean mAllowContentUrlAccess = true;
+@@ -40,9 +40,10 @@ public class AwServiceWorkerSettings {
+                 android.Manifest.permission.INTERNET,
+                 Process.myPid(),
+                 Process.myUid()) == PackageManager.PERMISSION_GRANTED;
++        Log.d(LOGTAG, "cdesai: Bob the service worker! " + Prcoess.myUid());
+         synchronized (mAwServiceWorkerSettingsLock) {
+-            mHasInternetPermission = hasInternetPermission;
+-            mBlockNetworkLoads = !hasInternetPermission;
++            mHasInternetPermission = false;//hasInternetPermission;
++            mBlockNetworkLoads = true;//!hasInternetPermission;
+         }
+     }
+ 
+@@ -119,7 +120,8 @@ public class AwServiceWorkerSettings {
+                 throw new SecurityException("Permission denied - "
+                         + "application missing INTERNET permission");
+             }
+-            mBlockNetworkLoads = flag;
++            Log.d(LOGTAG, "cdesai: Blocking network loads always");
++            mBlockNetworkLoads = true;//flag;
+         }
+     }
+ 
+@@ -127,6 +129,7 @@ public class AwServiceWorkerSettings {
+      * See {@link android.webkit.ServiceWorkerWebSettings#getBlockNetworkLoads}.
+      */
+     public boolean getBlockNetworkLoads() {
++        Log.d(LOGTAG, "cdesai: Blocking network loads always: " + mBlockNetworkLoads);
+         synchronized (mAwServiceWorkerSettingsLock) {
+             return mBlockNetworkLoads;
+         }
+diff --git a/android_webview/java/src/org/chromium/android_webview/AwSettings.java b/android_webview/java/src/org/chromium/android_webview/AwSettings.java
+index 8d61be4fb883..f29f31f593d2 100644
+--- a/android_webview/java/src/org/chromium/android_webview/AwSettings.java
++++ b/android_webview/java/src/org/chromium/android_webview/AwSettings.java
+@@ -41,7 +41,7 @@ import java.lang.annotation.RetentionPolicy;
+ @JNINamespace("android_webview")
+ public class AwSettings {
+     private static final String LOGTAG = AwSettings.class.getSimpleName();
+-    private static final boolean TRACE = false;
++    private static final boolean TRACE = true;
+ 
+     private static final String TAG = "AwSettings";
+ 
+@@ -263,9 +263,10 @@ public class AwSettings {
+                 android.Manifest.permission.INTERNET,
+                 Process.myPid(),
+                 Process.myUid()) == PackageManager.PERMISSION_GRANTED;
++        Log.d(LOGTAG, "cdesai: Bob the builder!" + Process.myUid());
+         synchronized (mAwSettingsLock) {
+-            mHasInternetPermission = hasInternetPermission;
+-            mBlockNetworkLoads = !hasInternetPermission;
++            mHasInternetPermission = false;//hasInternetPermission;
++            mBlockNetworkLoads = true;//!hasInternetPermission;
+             mEventHandler = new EventHandler();
+             if (isAccessFromFileURLsGrantedByDefault) {
+                 mAllowUniversalAccessFromFileURLs = true;
+@@ -358,7 +359,8 @@ public class AwSettings {
+                 throw new SecurityException("Permission denied - "
+                         + "application missing INTERNET permission");
+             }
+-            mBlockNetworkLoads = flag;
++            Log.d(LOGTAG, "cdesai: Blocking network loads always");
++            mBlockNetworkLoads = true;//flag;
+         }
+     }
+ 
+@@ -366,6 +368,7 @@ public class AwSettings {
+      * See {@link android.webkit.WebSettings#getBlockNetworkLoads}.
+      */
+     public boolean getBlockNetworkLoads() {
++        Log.d(LOGTAG, "cdesai: Blocking network loads always " + mBlockNetworkLoads);
+         synchronized (mAwSettingsLock) {
+             return mBlockNetworkLoads;
+         }
+-- 
+2.20.1
+
