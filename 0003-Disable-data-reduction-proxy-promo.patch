@@ -1,4 +1,4 @@
-From fd4c7e9d87da97ff9c1924eaf878f5b9a9fa17c5 Mon Sep 17 00:00:00 2001
+From 0cb535e6935a4f2bfe0de371816195aea9ed4153 Mon Sep 17 00:00:00 2001
 From: Chirayu Desai <chirayudesai1@gmail.com>
 Date: Sat, 8 Feb 2020 01:21:14 +0530
 Subject: [PATCH 03/20] Disable data reduction proxy promo
@@ -8,7 +8,7 @@ Subject: [PATCH 03/20] Disable data reduction proxy promo
  1 file changed, 6 insertions(+), 4 deletions(-)
 
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/net/spdyproxy/DataReductionProxySettings.java b/chrome/android/java/src/org/chromium/chrome/browser/net/spdyproxy/DataReductionProxySettings.java
-index b785ac427f28..fdc3f02889ee 100644
+index a905bf247f8e..f681aaa158ae 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/net/spdyproxy/DataReductionProxySettings.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/net/spdyproxy/DataReductionProxySettings.java
 @@ -130,14 +130,16 @@ public class DataReductionProxySettings {

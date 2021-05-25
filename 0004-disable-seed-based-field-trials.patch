@@ -1,4 +1,4 @@
-From 8ea1f83b7aaf714a938ca7900e888e48176f7933 Mon Sep 17 00:00:00 2001
+From 0fff9549f6fd7d2a7328dcf69855eab1c04b0e25 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 25 Dec 2018 16:19:51 -0500
 Subject: [PATCH 04/20] disable seed-based field trials
@@ -8,7 +8,7 @@ Subject: [PATCH 04/20] disable seed-based field trials
  1 file changed, 2 insertions(+)
 
 diff --git a/components/variations/service/variations_field_trial_creator.cc b/components/variations/service/variations_field_trial_creator.cc
-index 85be0bfdd779..3773c11c8e11 100644
+index 7d93ed956f6d..d0969a66d31f 100644
 --- a/components/variations/service/variations_field_trial_creator.cc
 +++ b/components/variations/service/variations_field_trial_creator.cc
 @@ -533,8 +533,10 @@ bool VariationsFieldTrialCreator::SetupFieldTrials(

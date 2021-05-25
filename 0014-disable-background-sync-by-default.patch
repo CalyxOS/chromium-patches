@@ -1,4 +1,4 @@
-From efe54cbac1cb26fae18649f9ef7179dbc523485f Mon Sep 17 00:00:00 2001
+From eacaaf5ce36641cd035e26ac01e86f930aa7fafc Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 16 Jun 2019 21:57:26 -0400
 Subject: [PATCH 14/20] disable background sync by default
@@ -8,7 +8,7 @@ Subject: [PATCH 14/20] disable background sync by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/content_settings/core/browser/content_settings_registry.cc b/components/content_settings/core/browser/content_settings_registry.cc
-index e088941b1d26..9281722b906e 100644
+index e11df466652f..118c670cd73e 100644
 --- a/components/content_settings/core/browser/content_settings_registry.cc
 +++ b/components/content_settings/core/browser/content_settings_registry.cc
 @@ -301,7 +301,7 @@ void ContentSettingsRegistry::Init() {

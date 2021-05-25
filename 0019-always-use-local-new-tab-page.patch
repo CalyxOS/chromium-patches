@@ -1,4 +1,4 @@
-From 04681ed19baca0ec269635eddf2b4d04c2f0e864 Mon Sep 17 00:00:00 2001
+From b55854aaf9406110440384758001a4efc6c9ad33 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 17 Jun 2019 13:14:22 -0400
 Subject: [PATCH 19/20] always use local new tab page
@@ -8,10 +8,10 @@ Subject: [PATCH 19/20] always use local new tab page
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/chrome/browser/search/search.cc b/chrome/browser/search/search.cc
-index 74c275c5cc09..d77ce20c4ff3 100644
+index a624563aedd4..a2d3d9a74247 100644
 --- a/chrome/browser/search/search.cc
 +++ b/chrome/browser/search/search.cc
-@@ -161,7 +161,7 @@ bool ShouldShowLocalNewTab(Profile* profile) {
+@@ -156,7 +156,7 @@ bool ShouldShowLocalNewTab(Profile* profile) {
  #if !defined(OS_ANDROID)
    return DefaultSearchProviderIsGoogle(profile);
  #else
