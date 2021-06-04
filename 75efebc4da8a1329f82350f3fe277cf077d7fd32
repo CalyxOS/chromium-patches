@@ -16,6 +16,24 @@
       "message": "Will need more.",
       "revId": "75efebc4da8a1329f82350f3fe277cf077d7fd32",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ffabc08_caddbd0f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-06-04T12:30:01Z",
+      "side": 1,
+      "message": "Yep, universal apk generated from bundle didn\u0027t work.\n\n3604: Add patch to add back trichrome_chrome_apk targets | https://review.calyxos.org/c/CalyxOS/chromium-patches/+/3604 works",
+      "parentUuid": "7849b3ed_021cd9d4",
+      "revId": "75efebc4da8a1329f82350f3fe277cf077d7fd32",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
