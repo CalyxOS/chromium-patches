@@ -1,7 +1,7 @@
-From 09429bb9ffffc483c562ccc348928e7e525697b2 Mon Sep 17 00:00:00 2001
+From 54da74e251e6e3d9bdf6f708d9a604eb997dffa7 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 6 Aug 2017 12:45:14 -0400
-Subject: [PATCH 01/20] use Chromium branding in more places
+Subject: [PATCH 01/22] use Chromium branding in more places
 
 ---
  chrome/browser/ui/android/strings/android_chrome_strings.grd | 4 ++--

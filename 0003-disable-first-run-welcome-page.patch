@@ -1,0 +1,31 @@
+From da70fda726ceaef74cb2cfc6d3f0dd662ecf97b9 Mon Sep 17 00:00:00 2001
+From: Daniel Micay <danielmicay@gmail.com>
+Date: Thu, 24 Nov 2016 08:19:03 -0500
+Subject: [PATCH 03/22] disable first run welcome page
+
+---
+ .../chrome/browser/firstrun/FirstRunActivity.java         | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
+index e9ad90daa167..e833eb6aa22a 100644
+--- a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
++++ b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
+@@ -152,10 +152,10 @@ public class FirstRunActivity extends FirstRunActivityBase implements FirstRunPa
+      * Defines a sequence of pages to be shown (depending on parameters etc).
+      */
+     private void createPageSequence() {
+-        mPages.add(shouldCreateEnterpriseCctTosPage()
+-                        ? new TosAndUmaFirstRunFragmentWithEnterpriseSupport.Page()
+-                        : new ToSAndUMAFirstRunFragment.Page());
+-        mFreProgressStates.add(FRE_PROGRESS_WELCOME_SHOWN);
++        //mPages.add(shouldCreateEnterpriseCctTosPage()
++                        //? new TosAndUmaFirstRunFragmentWithEnterpriseSupport.Page()
++                        //: new ToSAndUMAFirstRunFragment.Page());
++        //mFreProgressStates.add(FRE_PROGRESS_WELCOME_SHOWN);
+         // Other pages will be created by createPostNativeAndPoliciesPageSequence() after
+         // native and policy service have been initialized.
+     }
+-- 
+2.20.1
+

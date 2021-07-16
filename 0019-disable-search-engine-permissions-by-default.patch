@@ -1,7 +1,7 @@
-From 6e3aa89315731c8b68a5011a4d5c275516c24238 Mon Sep 17 00:00:00 2001
+From 637819cf34ca334e8b7400b3e8b52669f6a35efa Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 1 Aug 2017 20:29:56 -0400
-Subject: [PATCH 18/20] disable search engine permissions by default
+Subject: [PATCH 19/22] disable search engine permissions by default
 
 Disable the geolocation and notification permissions for the default
 search engine by default.
