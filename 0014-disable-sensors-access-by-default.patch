@@ -1,7 +1,7 @@
-From 63a5fce0487b2ae6f99b6f0652ff15180bbc6f7b Mon Sep 17 00:00:00 2001
+From 5035f3d009663cce15f6d32c81de1314cbbe5893 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 16 Jun 2019 15:57:29 -0400
-Subject: [PATCH 13/20] disable sensors access by default
+Subject: [PATCH 14/22] disable sensors access by default
 
 ---
  .../content_settings/core/browser/content_settings_registry.cc  | 2 +-

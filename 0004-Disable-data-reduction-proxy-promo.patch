@@ -1,7 +1,7 @@
-From 0cb535e6935a4f2bfe0de371816195aea9ed4153 Mon Sep 17 00:00:00 2001
+From 6ac0a508f8560b3aab8071a06a79ff934bbcab58 Mon Sep 17 00:00:00 2001
 From: Chirayu Desai <chirayudesai1@gmail.com>
 Date: Sat, 8 Feb 2020 01:21:14 +0530
-Subject: [PATCH 03/20] Disable data reduction proxy promo
+Subject: [PATCH 04/22] Disable data reduction proxy promo
 
 ---
  .../net/spdyproxy/DataReductionProxySettings.java      | 10 ++++++----

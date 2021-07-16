@@ -1,7 +1,7 @@
-From eacaaf5ce36641cd035e26ac01e86f930aa7fafc Mon Sep 17 00:00:00 2001
+From 7e8219442f9496b71d7a91724bf9a00835337e8f Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 16 Jun 2019 21:57:26 -0400
-Subject: [PATCH 14/20] disable background sync by default
+Subject: [PATCH 15/22] disable background sync by default
 
 ---
  .../content_settings/core/browser/content_settings_registry.cc  | 2 +-

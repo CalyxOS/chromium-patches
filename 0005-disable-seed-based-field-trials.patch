@@ -1,7 +1,7 @@
-From 0fff9549f6fd7d2a7328dcf69855eab1c04b0e25 Mon Sep 17 00:00:00 2001
+From 551ab01ef7b2d7222d29ab778070d4eba6c3c950 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 25 Dec 2018 16:19:51 -0500
-Subject: [PATCH 04/20] disable seed-based field trials
+Subject: [PATCH 05/22] disable seed-based field trials
 
 ---
  components/variations/service/variations_field_trial_creator.cc | 2 ++
