@@ -1,4 +1,4 @@
-From ad4b75cfee31ddc4231de796da57e0161adad4da Mon Sep 17 00:00:00 2001
+From 0f13c0260b330097e869bd7b3c02ab345b94e5cb Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 8 Mar 2018 22:43:12 -0500
 Subject: [PATCH 12/22] disable article suggestions feature by default
@@ -9,7 +9,7 @@ Subject: [PATCH 12/22] disable article suggestions feature by default
  2 files changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/components/feed/core/shared_prefs/pref_names.cc b/components/feed/core/shared_prefs/pref_names.cc
-index 57a65895fbde..831c046bfe79 100644
+index 57a65895fbded..831c046bfe792 100644
 --- a/components/feed/core/shared_prefs/pref_names.cc
 +++ b/components/feed/core/shared_prefs/pref_names.cc
 @@ -20,9 +20,9 @@ const char kArticlesListVisible[] = "ntp_snippets.list_visible";
@@ -26,7 +26,7 @@ index 57a65895fbde..831c046bfe79 100644
  
  }  // namespace prefs
 diff --git a/components/ntp_snippets/features.cc b/components/ntp_snippets/features.cc
-index 226d09dcb96a..50234b43c032 100644
+index 226d09dcb96a3..50234b43c032c 100644
 --- a/components/ntp_snippets/features.cc
 +++ b/components/ntp_snippets/features.cc
 @@ -39,7 +39,7 @@ const base::Feature* const kAllFeatures[] = {

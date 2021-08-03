@@ -1,4 +1,4 @@
-From 594f4d9ae8de5dc96d479f84d1a0e1d7bc36ebad Mon Sep 17 00:00:00 2001
+From 77d0a47cf69bc5ca3534190c14dce722b2ecc3af Mon Sep 17 00:00:00 2001
 From: Zoraver Kang <zkang@wpi.edu>
 Date: Sat, 17 Aug 2019 15:53:50 -0400
 Subject: [PATCH 21/22] set default search engine to DuckDuckGo
@@ -8,7 +8,7 @@ Subject: [PATCH 21/22] set default search engine to DuckDuckGo
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/search_engines/template_url_prepopulate_data.cc b/components/search_engines/template_url_prepopulate_data.cc
-index 150b548b368d..1ee1069c1ce7 100644
+index 150b548b368dc..1ee1069c1ce76 100644
 --- a/components/search_engines/template_url_prepopulate_data.cc
 +++ b/components/search_engines/template_url_prepopulate_data.cc
 @@ -1381,7 +1381,7 @@ std::vector<std::unique_ptr<TemplateURLData>> GetPrepopulatedEngines(

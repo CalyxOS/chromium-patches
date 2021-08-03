@@ -1,4 +1,4 @@
-From 626322ba93eb47db82e354581c38841c4b5da1a4 Mon Sep 17 00:00:00 2001
+From 6a15363f8241a5c7e8836e8d98d1edc4b107a221 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 23 Nov 2016 09:26:51 -0500
 Subject: [PATCH 07/22] disable contextual search by default
@@ -9,7 +9,7 @@ Subject: [PATCH 07/22] disable contextual search by default
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/contextualsearch/ContextualSearchFieldTrial.java b/chrome/android/java/src/org/chromium/chrome/browser/contextualsearch/ContextualSearchFieldTrial.java
-index 46bacf442c06..78064663ad4c 100644
+index 46bacf442c06f..78064663ad4c5 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/contextualsearch/ContextualSearchFieldTrial.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/contextualsearch/ContextualSearchFieldTrial.java
 @@ -326,7 +326,7 @@ public class ContextualSearchFieldTrial {
@@ -22,10 +22,10 @@ index 46bacf442c06..78064663ad4c 100644
  
      /**
 diff --git a/chrome/browser/profiles/profile.cc b/chrome/browser/profiles/profile.cc
-index 94aafe60eb45..d42ea127997e 100644
+index 7ee045c66e37b..f6f9c92221b00 100644
 --- a/chrome/browser/profiles/profile.cc
 +++ b/chrome/browser/profiles/profile.cc
-@@ -270,7 +270,7 @@ void Profile::RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry) {
+@@ -285,7 +285,7 @@ void Profile::RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry) {
  #if defined(OS_ANDROID)
    registry->RegisterStringPref(
        prefs::kContextualSearchEnabled,
@@ -33,7 +33,7 @@ index 94aafe60eb45..d42ea127997e 100644
 +      "false",
        user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
  #endif  // defined(OS_ANDROID)
-   registry->RegisterBooleanPref(prefs::kSessionExitedCleanly, true);
+   registry->RegisterStringPref(prefs::kSessionExitType, std::string());
 -- 
 2.20.1
 

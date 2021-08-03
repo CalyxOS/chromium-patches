@@ -1,31 +1,73 @@
-From da70fda726ceaef74cb2cfc6d3f0dd662ecf97b9 Mon Sep 17 00:00:00 2001
-From: Daniel Micay <danielmicay@gmail.com>
-Date: Thu, 24 Nov 2016 08:19:03 -0500
+From ceccca90e9290cbdef01d0c3866c942ea94f7fc3 Mon Sep 17 00:00:00 2001
+From: csagan5 <32685696+csagan5@users.noreply.github.com>
+Date: Sun, 26 Nov 2017 22:51:43 +0100
 Subject: [PATCH 03/22] disable first run welcome page
 
 ---
- .../chrome/browser/firstrun/FirstRunActivity.java         | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ .../chrome/browser/firstrun/FirstRunStatus.java       | 11 +++++------
+ .../chrome/browser/firstrun/FirstRunUtils.java        |  3 ---
+ .../browser/firstrun/ToSAndUMAFirstRunFragment.java   |  6 ------
+ 3 files changed, 5 insertions(+), 15 deletions(-)
 
-diff --git a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
-index e9ad90daa167..e833eb6aa22a 100644
---- a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
-+++ b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
-@@ -152,10 +152,10 @@ public class FirstRunActivity extends FirstRunActivityBase implements FirstRunPa
-      * Defines a sequence of pages to be shown (depending on parameters etc).
+diff --git a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunStatus.java b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunStatus.java
+index 6ca453f89dabf..e5fcafa727eb5 100644
+--- a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunStatus.java
++++ b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunStatus.java
+@@ -41,12 +41,11 @@ public class FirstRunStatus {
+      * includes ToS and Sign In pages if necessary.
       */
-     private void createPageSequence() {
--        mPages.add(shouldCreateEnterpriseCctTosPage()
--                        ? new TosAndUmaFirstRunFragmentWithEnterpriseSupport.Page()
--                        : new ToSAndUMAFirstRunFragment.Page());
--        mFreProgressStates.add(FRE_PROGRESS_WELCOME_SHOWN);
-+        //mPages.add(shouldCreateEnterpriseCctTosPage()
-+                        //? new TosAndUmaFirstRunFragmentWithEnterpriseSupport.Page()
-+                        //: new ToSAndUMAFirstRunFragment.Page());
-+        //mFreProgressStates.add(FRE_PROGRESS_WELCOME_SHOWN);
-         // Other pages will be created by createPostNativeAndPoliciesPageSequence() after
-         // native and policy service have been initialized.
+     public static boolean getFirstRunFlowComplete() {
+-        if (SharedPreferencesManager.getInstance().readBoolean(
+-                    ChromePreferenceKeys.FIRST_RUN_FLOW_COMPLETE, false)) {
+-            return true;
+-        }
+-        return CommandLine.getInstance().hasSwitch(
+-                ChromeSwitches.FORCE_FIRST_RUN_FLOW_COMPLETE_FOR_TESTING);
++        boolean complete = SharedPreferencesManager.getInstance().readBoolean(
++                    ChromePreferenceKeys.FIRST_RUN_FLOW_COMPLETE, false);
++        if (!complete)
++           setFirstRunFlowComplete(true);
++        return true;
      }
+ 
+     /**
+diff --git a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunUtils.java b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunUtils.java
+index 6fc4156698934..a088f1eed6770 100644
+--- a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunUtils.java
++++ b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunUtils.java
+@@ -42,15 +42,12 @@ public class FirstRunUtils {
+         boolean javaPrefValue =
+                 javaPrefs.readBoolean(ChromePreferenceKeys.FIRST_RUN_CACHED_TOS_ACCEPTED, false);
+         boolean nativePrefValue = isFirstRunEulaAccepted();
+-        boolean isFirstRunComplete = FirstRunStatus.getFirstRunFlowComplete();
+-        if (javaPrefValue || nativePrefValue || isFirstRunComplete) {
+             if (!javaPrefValue) {
+                 javaPrefs.writeBoolean(ChromePreferenceKeys.FIRST_RUN_CACHED_TOS_ACCEPTED, true);
+             }
+             if (!nativePrefValue) {
+                 setEulaAccepted();
+             }
+-        }
+     }
+ 
+     /**
+diff --git a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/ToSAndUMAFirstRunFragment.java b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/ToSAndUMAFirstRunFragment.java
+index 46bfe0803eda3..7bcb81da1a110 100644
+--- a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/ToSAndUMAFirstRunFragment.java
++++ b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/ToSAndUMAFirstRunFragment.java
+@@ -98,12 +98,6 @@ public class ToSAndUMAFirstRunFragment extends Fragment implements FirstRunFragm
+ 
+         mAcceptButton.setOnClickListener((v) -> onTosButtonClicked());
+ 
+-        mSendReportCheckBox.setChecked(getUmaCheckBoxInitialState());
+-        if (!canShowUmaCheckBox()) {
+-            mSendReportCheckBox.setVisibility(View.GONE);
+-        }
+-
+-        mTosAndPrivacy.setMovementMethod(LinkMovementMethod.getInstance());
+ 
+         Resources resources = getResources();
+         NoUnderlineClickableSpan clickableGoogleTermsSpan =
 -- 
 2.20.1
 

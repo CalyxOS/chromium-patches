@@ -1,4 +1,4 @@
-From 55df7f5899e0424adbc4aad5668cc6b04d0b4fc6 Mon Sep 17 00:00:00 2001
+From 0332d06f92f859a3a0204094c1ea948cd01359f3 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 17 Jun 2019 13:14:22 -0400
 Subject: [PATCH 20/22] always use local new tab page
@@ -8,7 +8,7 @@ Subject: [PATCH 20/22] always use local new tab page
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/chrome/browser/search/search.cc b/chrome/browser/search/search.cc
-index a624563aedd4..a2d3d9a74247 100644
+index a624563aedd48..a2d3d9a742478 100644
 --- a/chrome/browser/search/search.cc
 +++ b/chrome/browser/search/search.cc
 @@ -156,7 +156,7 @@ bool ShouldShowLocalNewTab(Profile* profile) {

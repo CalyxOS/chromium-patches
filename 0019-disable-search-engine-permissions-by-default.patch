@@ -1,4 +1,4 @@
-From 637819cf34ca334e8b7400b3e8b52669f6a35efa Mon Sep 17 00:00:00 2001
+From d97fe75a95dacc3c6501c40b6258e1e5834b2c35 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 1 Aug 2017 20:29:56 -0400
 Subject: [PATCH 19/22] disable search engine permissions by default
@@ -10,10 +10,10 @@ search engine by default.
  1 file changed, 6 insertions(+), 14 deletions(-)
 
 diff --git a/chrome/browser/android/search_permissions/search_permissions_service.cc b/chrome/browser/android/search_permissions/search_permissions_service.cc
-index d4bfd0805c23..679db4c4d5e0 100644
+index 33f41930bd8d8..f78c100e81355 100644
 --- a/chrome/browser/android/search_permissions/search_permissions_service.cc
 +++ b/chrome/browser/android/search_permissions/search_permissions_service.cc
-@@ -191,7 +191,7 @@ void SearchPermissionsService::ResetDSEPermission(ContentSettingsType type) {
+@@ -193,7 +193,7 @@ void SearchPermissionsService::ResetDSEPermission(ContentSettingsType type) {
    DCHECK(dse_url.is_empty() || IsPermissionControlledByDSE(type, dse_origin));
  
    if (!dse_url.is_empty())
@@ -22,7 +22,7 @@ index d4bfd0805c23..679db4c4d5e0 100644
  }
  
  void SearchPermissionsService::ResetDSEPermissions() {
-@@ -334,11 +334,7 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
+@@ -336,11 +336,7 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
      return;
    }
  
@@ -35,7 +35,7 @@ index d4bfd0805c23..679db4c4d5e0 100644
    pref_service_->ClearPref(prefs::kDSEWasDisabledByPolicy);
  
    // Initialize the pref for geolocation if it hasn't been initialized yet.
-@@ -371,10 +367,8 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
+@@ -373,10 +369,8 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
        pref_service_->ClearPref(prefs::kDSEGeolocationSettingDeprecated);
      } else if (dse_geolocation_setting == CONTENT_SETTING_ASK) {
        // If the user hasn't explicitly allowed or blocked geolocation for the
@@ -48,7 +48,7 @@ index d4bfd0805c23..679db4c4d5e0 100644
      }
  
      // Update the content setting with the auto-grants for the DSE.
-@@ -399,11 +393,9 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
+@@ -401,11 +395,9 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
          GetContentSetting(dse_origin, ContentSettingsType::NOTIFICATIONS);
      ContentSetting dse_notifications_setting = notifications_setting_to_restore;
      // If the user hasn't explicitly allowed or blocked notifications for the

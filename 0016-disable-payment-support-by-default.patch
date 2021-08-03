@@ -1,4 +1,4 @@
-From 02d21d7657949f873128445302fef10084312887 Mon Sep 17 00:00:00 2001
+From c48a40ca677ee0bb4eec6b4e16b06e5d63c7281f Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 18 Jun 2019 22:28:53 -0400
 Subject: [PATCH 16/22] disable payment support by default
@@ -8,7 +8,7 @@ Subject: [PATCH 16/22] disable payment support by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/payments/core/payment_prefs.cc b/components/payments/core/payment_prefs.cc
-index 9590d9494ed1..787ff68af12a 100644
+index 9590d9494ed10..787ff68af12aa 100644
 --- a/components/payments/core/payment_prefs.cc
 +++ b/components/payments/core/payment_prefs.cc
 @@ -16,7 +16,7 @@ const char kCanMakePaymentEnabled[] = "payments.can_make_payment_enabled";
