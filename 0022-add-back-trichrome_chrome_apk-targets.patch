@@ -1,4 +1,4 @@
-From faca6c767680ce4540caa1b38065171e47679fe6 Mon Sep 17 00:00:00 2001
+From 03ade47c26260c7c9454b7d5d7beb2e1950dc5f8 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 27 May 2021 07:30:02 -0400
 Subject: [PATCH 22/22] add back trichrome_chrome_apk targets

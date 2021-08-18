@@ -1,4 +1,4 @@
-From 6a15363f8241a5c7e8836e8d98d1edc4b107a221 Mon Sep 17 00:00:00 2001
+From 94d3eb42018a9ece41311542c316d819c0547b5b Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 23 Nov 2016 09:26:51 -0500
 Subject: [PATCH 07/22] disable contextual search by default
