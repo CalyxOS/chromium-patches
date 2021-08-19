@@ -1,0 +1,69 @@
+From dd71f224cca90d2b65d5a87579301b5a4435c03e Mon Sep 17 00:00:00 2001
+From: O <uldiniad@localhost>
+Date: Thu, 19 Aug 2021 14:06:13 -0400
+Subject: [PATCH 1/1] [PATCH] android_webview: Log BlockNetworkLoads
+
+---
+ .../java/src/org/chromium/android_webview/AwContents.java      | 2 +-
+ .../org/chromium/android_webview/AwServiceWorkerSettings.java  | 3 ++-
+ .../java/src/org/chromium/android_webview/AwSettings.java      | 3 ++-
+ 3 files changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/android_webview/java/src/org/chromium/android_webview/AwContents.java b/android_webview/java/src/org/chromium/android_webview/AwContents.java
+index 625870e948d9..8080bccb2d6d 100644
+--- a/android_webview/java/src/org/chromium/android_webview/AwContents.java
++++ b/android_webview/java/src/org/chromium/android_webview/AwContents.java
+@@ -144,7 +144,7 @@ import java.util.regex.Pattern;
+ @JNINamespace("android_webview")
+ public class AwContents implements SmartClipProvider {
+     private static final String TAG = "AwContents";
+-    private static final boolean TRACE = false;
++    private static final boolean TRACE = true;
+     private static final int NO_WARN = 0;
+     private static final int WARN = 1;
+     private static final String PRODUCT_VERSION = AwContentsStatics.getProductVersion();
+diff --git a/android_webview/java/src/org/chromium/android_webview/AwServiceWorkerSettings.java b/android_webview/java/src/org/chromium/android_webview/AwServiceWorkerSettings.java
+index fdd0193c122c..53f025967843 100644
+--- a/android_webview/java/src/org/chromium/android_webview/AwServiceWorkerSettings.java
++++ b/android_webview/java/src/org/chromium/android_webview/AwServiceWorkerSettings.java
+@@ -21,7 +21,7 @@ import org.chromium.base.annotations.JNINamespace;
+ @JNINamespace("android_webview")
+ public class AwServiceWorkerSettings {
+     private static final String LOGTAG = AwServiceWorkerSettings.class.getSimpleName();
+-    private static final boolean TRACE = false;
++    private static final boolean TRACE = true;
+ 
+     private int mCacheMode = WebSettings.LOAD_DEFAULT;
+     private boolean mAllowContentUrlAccess = true;
+@@ -127,6 +127,7 @@ public class AwServiceWorkerSettings {
+      * See {@link android.webkit.ServiceWorkerWebSettings#getBlockNetworkLoads}.
+      */
+     public boolean getBlockNetworkLoads() {
++        if (TRACE) Log.d(LOGTAG, "getBlockNetworkLoads=" + mBlockNetworkLoads);
+         synchronized (mAwServiceWorkerSettingsLock) {
+             return mBlockNetworkLoads;
+         }
+diff --git a/android_webview/java/src/org/chromium/android_webview/AwSettings.java b/android_webview/java/src/org/chromium/android_webview/AwSettings.java
+index bb3044a0ccb9..d62d5c9baa21 100644
+--- a/android_webview/java/src/org/chromium/android_webview/AwSettings.java
++++ b/android_webview/java/src/org/chromium/android_webview/AwSettings.java
+@@ -41,7 +41,7 @@ import java.lang.annotation.RetentionPolicy;
+ @JNINamespace("android_webview")
+ public class AwSettings {
+     private static final String LOGTAG = AwSettings.class.getSimpleName();
+-    private static final boolean TRACE = false;
++    private static final boolean TRACE = true;
+ 
+     private static final String TAG = "AwSettings";
+ 
+@@ -366,6 +366,7 @@ public class AwSettings {
+      * See {@link android.webkit.WebSettings#getBlockNetworkLoads}.
+      */
+     public boolean getBlockNetworkLoads() {
++        if (TRACE) Log.d(LOGTAG, "getBlockNetworkLoads=" + mBlockNetworkLoads);
+         synchronized (mAwSettingsLock) {
+             return mBlockNetworkLoads;
+         }
+-- 
+2.20.1
+
