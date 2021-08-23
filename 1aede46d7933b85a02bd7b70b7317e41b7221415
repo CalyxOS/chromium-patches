@@ -16,6 +16,23 @@
       "message": "I cannot find any other relevant references related to the INTERNET permission (especially in webview)",
       "revId": "1aede46d7933b85a02bd7b70b7317e41b7221415",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b7f6c49_46df1eb5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2021-08-23T20:03:03Z",
+      "side": 1,
+      "message": "Can be abandoned",
+      "revId": "1aede46d7933b85a02bd7b70b7317e41b7221415",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
