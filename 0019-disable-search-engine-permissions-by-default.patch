@@ -1,4 +1,4 @@
-From 4d33fea06b34e4ac3d383d798b5b33cf8fced8fe Mon Sep 17 00:00:00 2001
+From dde4c298e7a5ee79188df4d9261d667cd57dc000 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 16 Aug 2021 18:59:43 -0400
 Subject: [PATCH 19/22] disable search engine permissions by default
@@ -10,10 +10,10 @@ search engine by default.
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/permissions/features.cc b/components/permissions/features.cc
-index 744b7645af876..69b5e6f00b998 100644
+index ca58bd606dafa..e475e13b23a99 100644
 --- a/components/permissions/features.cc
 +++ b/components/permissions/features.cc
-@@ -54,7 +54,7 @@ const base::Feature kPermissionPredictionServiceUseUrlOverride{
+@@ -74,7 +74,7 @@ const base::Feature kRevisedOriginHandling{"PermissionsRevisedOriginHandling",
  // When enabled, the Default Search Engine does not automatically receive the
  // "geolocation" and "notifications" permissions. DSE only applies to Android.
  const base::Feature kRevertDSEAutomaticPermissions{
