@@ -1,4 +1,4 @@
-From 2dcedeb9dcf0b1caf5263ae1cc41514d7ffd23bd Mon Sep 17 00:00:00 2001
+From 0b465cc1bea91e68391449e26124e5003ac0b61d Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 6 Aug 2017 12:45:14 -0400
 Subject: [PATCH 01/22] use Chromium branding in more places
@@ -8,10 +8,10 @@ Subject: [PATCH 01/22] use Chromium branding in more places
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/chrome/browser/ui/android/strings/android_chrome_strings.grd b/chrome/browser/ui/android/strings/android_chrome_strings.grd
-index e1f8043115499..340d3bd2531c5 100644
+index 262aaf6a3d638..c4692a8880b6a 100644
 --- a/chrome/browser/ui/android/strings/android_chrome_strings.grd
 +++ b/chrome/browser/ui/android/strings/android_chrome_strings.grd
-@@ -1540,7 +1540,7 @@ Your Google account may have other forms of browsing history like searches and a
+@@ -1566,7 +1566,7 @@ Your Google account may have other forms of browsing history like searches and a
  
        <!-- About Chrome preferences -->
        <message name="IDS_PREFS_ABOUT_CHROME" desc="Title for the About Chrome page. [CHAR_LIMIT=32]">
@@ -20,7 +20,7 @@ index e1f8043115499..340d3bd2531c5 100644
        </message>
        <message name="IDS_LEGAL_INFORMATION_SUMMARY" desc="Summary for legal information" meaning="Android">
          Copyright <ph name="year">%1$d<ex>2014</ex></ph> Google LLC. All rights reserved.
-@@ -1593,7 +1593,7 @@ Your Google account may have other forms of browsing history like searches and a
+@@ -1619,7 +1619,7 @@ Your Google account may have other forms of browsing history like searches and a
        </message>
  
        <message name="IDS_POWERED_BY_CHROME_MESSAGE" desc="A message indicating that the current page is running in Chrome.">

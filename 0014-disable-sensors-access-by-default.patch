@@ -1,4 +1,4 @@
-From 0dcf7e3f51dad9880f97230971b35fb99f42223d Mon Sep 17 00:00:00 2001
+From b5a86777c87e2b1cd05ff5cb86379f1bbe7a13bb Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 16 Jun 2019 15:57:29 -0400
 Subject: [PATCH 14/22] disable sensors access by default
@@ -8,10 +8,10 @@ Subject: [PATCH 14/22] disable sensors access by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/content_settings/core/browser/content_settings_registry.cc b/components/content_settings/core/browser/content_settings_registry.cc
-index 4445900c8a7a5..25b25d06a4139 100644
+index 585b86afeeacd..d7272c314dfec 100644
 --- a/components/content_settings/core/browser/content_settings_registry.cc
 +++ b/components/content_settings/core/browser/content_settings_registry.cc
-@@ -408,7 +408,7 @@ void ContentSettingsRegistry::Init() {
+@@ -403,7 +403,7 @@ void ContentSettingsRegistry::Init() {
    // TODO(crbug.com/904439): Update this to "SECURE_ONLY" once
    // DeviceOrientationEvents and DeviceMotionEvents are only fired in secure
    // contexts.
