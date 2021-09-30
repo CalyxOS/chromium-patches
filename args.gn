@@ -10,7 +10,7 @@ is_debug = false
 is_official_build = true
 symbol_level = 0
 blink_symbol_level = 0
-fieldtrial_testing_like_official_build = true
+disable_fieldtrial_testing_config = true
 use_official_google_api_keys = false
 
 dfmify_dev_ui = false
