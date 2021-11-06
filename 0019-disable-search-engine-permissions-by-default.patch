@@ -1,4 +1,4 @@
-From 66a31b3af471e72183e7ae1d9f2eb72eb43b3b61 Mon Sep 17 00:00:00 2001
+From ee9389e340505262821ff0bdeae3c045d7a8414c Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 16 Aug 2021 18:59:43 -0400
 Subject: [PATCH 19/22] disable search engine permissions by default
