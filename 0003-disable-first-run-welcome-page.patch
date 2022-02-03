@@ -1,16 +1,16 @@
-From 15918a1c2790597a7f73deb31276196bd86055e9 Mon Sep 17 00:00:00 2001
+From 1501d7b10b82aaf1cffc4b1731b7a16db2448073 Mon Sep 17 00:00:00 2001
 From: csagan5 <32685696+csagan5@users.noreply.github.com>
 Date: Sun, 26 Nov 2017 22:51:43 +0100
 Subject: [PATCH 03/22] disable first run welcome page
 
 ---
- .../chromium/chrome/browser/firstrun/FirstRunUtils.java    | 3 ---
- .../chrome/browser/firstrun/ToSAndUMAFirstRunFragment.java | 6 ------
- .../chromium/chrome/browser/firstrun/FirstRunStatus.java   | 7 +++++--
- 3 files changed, 5 insertions(+), 11 deletions(-)
+ .../chrome/browser/firstrun/FirstRunUtils.java      |  3 ---
+ .../browser/firstrun/ToSAndUMAFirstRunFragment.java | 13 -------------
+ .../chrome/browser/firstrun/FirstRunStatus.java     |  7 +++++--
+ 3 files changed, 5 insertions(+), 18 deletions(-)
 
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunUtils.java b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunUtils.java
-index bdb19e7c20ffb..ae29235275e4d 100644
+index df973d0cfe..1669531359 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunUtils.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunUtils.java
 @@ -43,15 +43,12 @@ public class FirstRunUtils {
@@ -30,24 +30,31 @@ index bdb19e7c20ffb..ae29235275e4d 100644
  
      /**
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/ToSAndUMAFirstRunFragment.java b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/ToSAndUMAFirstRunFragment.java
-index 46bfe0803eda3..7bcb81da1a110 100644
+index 042f7dc312..53557e535c 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/ToSAndUMAFirstRunFragment.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/ToSAndUMAFirstRunFragment.java
-@@ -98,12 +98,6 @@ public class ToSAndUMAFirstRunFragment extends Fragment implements FirstRunFragm
+@@ -92,19 +92,6 @@ public class ToSAndUMAFirstRunFragment
  
          mAcceptButton.setOnClickListener((v) -> onTosButtonClicked());
  
--        mSendReportCheckBox.setChecked(getUmaCheckBoxInitialState());
+-        mSendReportCheckBox.setChecked(mAllowCrashUpload);
+-        mSendReportCheckBox.setOnCheckedChangeListener(
+-                ((compoundButton, isChecked) -> mAllowCrashUpload = isChecked));
 -        if (!canShowUmaCheckBox()) {
+-            if (!FREMobileIdentityConsistencyFieldTrial.shouldShowOldFreWithUmaDialog()) {
+-                mAllowCrashUpload =
+-                        sShowUmaCheckBoxForTesting || ChromeVersionInfo.isOfficialBuild();
+-            }
 -            mSendReportCheckBox.setVisibility(View.GONE);
 -        }
 -
 -        mTosAndPrivacy.setMovementMethod(LinkMovementMethod.getInstance());
- 
+-
          Resources resources = getResources();
-         NoUnderlineClickableSpan clickableGoogleTermsSpan =
+         final boolean showUmaDialog =
+                 FREMobileIdentityConsistencyFieldTrial.shouldShowOldFreWithUmaDialog();
 diff --git a/chrome/browser/first_run/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunStatus.java b/chrome/browser/first_run/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunStatus.java
-index 13bec9f270f5b..69cf072c3f8b6 100644
+index 13bec9f270..69cf072c3f 100644
 --- a/chrome/browser/first_run/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunStatus.java
 +++ b/chrome/browser/first_run/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunStatus.java
 @@ -43,8 +43,11 @@ public class FirstRunStatus {
@@ -65,5 +72,5 @@ index 13bec9f270f5b..69cf072c3f8b6 100644
  
      /**
 -- 
-2.20.1
+2.35.1
 

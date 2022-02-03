@@ -1,4 +1,4 @@
-From ee9389e340505262821ff0bdeae3c045d7a8414c Mon Sep 17 00:00:00 2001
+From 477e2251a284e1e170c29866fc734d20c41a3170 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 16 Aug 2021 18:59:43 -0400
 Subject: [PATCH 19/22] disable search engine permissions by default
@@ -10,7 +10,7 @@ search engine by default.
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/permissions/features.cc b/components/permissions/features.cc
-index 390de2f97e2df..47555f270a898 100644
+index 390de2f97e..47555f270a 100644
 --- a/components/permissions/features.cc
 +++ b/components/permissions/features.cc
 @@ -76,7 +76,7 @@ const base::Feature kRevisedOriginHandling{"PermissionsRevisedOriginHandling",
@@ -23,5 +23,5 @@ index 390de2f97e2df..47555f270a898 100644
  
  }  // namespace features
 -- 
-2.20.1
+2.35.1
 
