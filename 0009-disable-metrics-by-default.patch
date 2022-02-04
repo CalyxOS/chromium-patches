@@ -1,19 +1,19 @@
-From 6c3f6ab431de19ea5f2553d10c09287bede5e430 Mon Sep 17 00:00:00 2001
+From c1ec2efa5849fc3a023729c298826b8baca911c3 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 24 Nov 2016 11:41:00 -0500
-Subject: [PATCH 09/22] disable metrics by default
+Subject: [PATCH 09/21] disable metrics by default
 
 ---
  .../chromium/chrome/browser/firstrun/FirstRunActivityBase.java  | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivityBase.java b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivityBase.java
-index cf90b983fe..bd2324e697 100644
+index c8b01f9db0..4c8d9e7502 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivityBase.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivityBase.java
-@@ -44,7 +44,7 @@ public abstract class FirstRunActivityBase extends AsyncInitializationActivity {
-     static final String SHOW_SEARCH_ENGINE_PAGE = "ShowSearchEnginePage";
-     static final String SHOW_SYNC_CONSENT_PAGE = "ShowSyncConsent";
+@@ -46,7 +46,7 @@ public abstract class FirstRunActivityBase extends AsyncInitializationActivity {
+ 
+     static final String OPEN_ADVANCED_SYNC_SETTINGS = "OpenAdvancedSyncSettings";
  
 -    public static final boolean DEFAULT_METRICS_AND_CRASH_REPORTING = true;
 +    public static final boolean DEFAULT_METRICS_AND_CRASH_REPORTING = false;

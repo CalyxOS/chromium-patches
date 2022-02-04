@@ -1,17 +1,17 @@
-From 60ae597e5a01fca4bc1c590f4c80a003a42ae5bf Mon Sep 17 00:00:00 2001
+From 5750c6742fde3fe0bb00f572ebab23dd4b8b75dd Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 27 May 2021 07:30:02 -0400
-Subject: [PATCH 22/22] add back trichrome_chrome_apk targets
+Subject: [PATCH 21/21] add back trichrome_chrome_apk targets
 
 ---
  chrome/android/BUILD.gn | 46 ++++++++++++++++++++++++++++++++++++++++-
  1 file changed, 45 insertions(+), 1 deletion(-)
 
 diff --git a/chrome/android/BUILD.gn b/chrome/android/BUILD.gn
-index d5d60702f8..bf352fa398 100644
+index 177c751cae..08251bc917 100644
 --- a/chrome/android/BUILD.gn
 +++ b/chrome/android/BUILD.gn
-@@ -2196,6 +2196,10 @@ if (current_toolchain == default_toolchain) {
+@@ -2214,6 +2214,10 @@ if (current_toolchain == default_toolchain) {
      is_monochrome = true
      is_bundle_module = true
    }
@@ -22,7 +22,7 @@ index d5d60702f8..bf352fa398 100644
    resource_packaging("trichrome_chrome_bundle_module_pak_assets") {
      is_monochrome = false
      is_trichrome = true
-@@ -2754,7 +2758,7 @@ if (android_64bit_target_cpu && skip_secondary_abi_for_cq) {
+@@ -2773,7 +2777,7 @@ if (android_64bit_target_cpu && skip_secondary_abi_for_cq) {
  
      if (trichrome_synchronized_proguard) {
        webview_target = "//android_webview:trichrome_webview_apk"
@@ -31,7 +31,7 @@ index d5d60702f8..bf352fa398 100644
      }
  
      if (_enable_manifest_verification) {
-@@ -2810,6 +2814,46 @@ android_resources("trichrome_dummy_resources") {
+@@ -2829,6 +2833,46 @@ android_resources("trichrome_dummy_resources") {
    sources = [ "trichrome/res_dummy/values/strings.xml" ]
  }
  

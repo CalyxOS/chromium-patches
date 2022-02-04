@@ -1,7 +1,7 @@
-From 1501d7b10b82aaf1cffc4b1731b7a16db2448073 Mon Sep 17 00:00:00 2001
+From bd7e1b76784aa5c2771208c52a9f319278444f09 Mon Sep 17 00:00:00 2001
 From: csagan5 <32685696+csagan5@users.noreply.github.com>
 Date: Sun, 26 Nov 2017 22:51:43 +0100
-Subject: [PATCH 03/22] disable first run welcome page
+Subject: [PATCH 03/21] disable first run welcome page
 
 ---
  .../chrome/browser/firstrun/FirstRunUtils.java      |  3 ---

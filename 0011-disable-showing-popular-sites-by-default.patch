@@ -1,7 +1,7 @@
-From 4df1a119c425922237414aad5c89d5005a746111 Mon Sep 17 00:00:00 2001
+From 5783c659383b5b0a0a1d48f2df9019b305647bc4 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 6 Mar 2018 00:27:41 -0500
-Subject: [PATCH 11/22] disable showing popular sites by default
+Subject: [PATCH 11/21] disable showing popular sites by default
 
 ---
  components/ntp_tiles/features.cc | 4 ++--

@@ -1,7 +1,7 @@
-From d11975e2be3cd3569f61f64574140a1bca5e0df0 Mon Sep 17 00:00:00 2001
+From 6c567ce5756a067a15de0bdc3dfd23cae9f1b7de Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 12 Jul 2019 04:23:18 -0400
-Subject: [PATCH 17/22] disable browser sign in feature by default
+Subject: [PATCH 17/21] disable browser sign in feature by default
 
 ---
  chrome/browser/signin/account_consistency_mode_manager.cc       | 2 +-
@@ -9,7 +9,7 @@ Subject: [PATCH 17/22] disable browser sign in feature by default
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/chrome/browser/signin/account_consistency_mode_manager.cc b/chrome/browser/signin/account_consistency_mode_manager.cc
-index 559f167b42..c9d90d90f1 100644
+index 6c1f0f0472..a928e7cda9 100644
 --- a/chrome/browser/signin/account_consistency_mode_manager.cc
 +++ b/chrome/browser/signin/account_consistency_mode_manager.cc
 @@ -113,7 +113,7 @@ AccountConsistencyModeManager::~AccountConsistencyModeManager() {}
