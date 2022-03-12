@@ -1,14 +1,14 @@
-From 8c4f2dfad7b53a2473d70b123060f18c2666fbcc Mon Sep 17 00:00:00 2001
+From 6d10455908514416d708aaa94578951a389b442a Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 6 Aug 2017 12:45:14 -0400
-Subject: [PATCH 01/21] use Chromium branding in more places
+Subject: [PATCH 01/19] use Chromium branding in more places
 
 ---
  chrome/browser/ui/android/strings/android_chrome_strings.grd | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/chrome/browser/ui/android/strings/android_chrome_strings.grd b/chrome/browser/ui/android/strings/android_chrome_strings.grd
-index 1d7f1101dc..3e693ce426 100644
+index 03f0504d4e..efae9e096f 100644
 --- a/chrome/browser/ui/android/strings/android_chrome_strings.grd
 +++ b/chrome/browser/ui/android/strings/android_chrome_strings.grd
 @@ -1724,7 +1724,7 @@ Your Google account may have other forms of browsing history like searches and a

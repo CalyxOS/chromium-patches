@@ -1,7 +1,7 @@
-From 7c1006166d6b566077156c801001dae4a2f90a75 Mon Sep 17 00:00:00 2001
+From cc8ae6f5fdfbdcb60ec8b1c6940030b7a8a17240 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 8 Mar 2018 22:43:12 -0500
-Subject: [PATCH 12/21] disable article suggestions feature by default
+Subject: [PATCH 11/19] disable article suggestions feature by default
 
 ---
  components/feed/core/shared_prefs/pref_names.cc | 6 +++---
@@ -26,7 +26,7 @@ index 57a65895fb..831c046bfe 100644
  
  }  // namespace prefs
 diff --git a/components/ntp_snippets/features.cc b/components/ntp_snippets/features.cc
-index c5ea510f1e..688887dc4b 100644
+index afd397161e..c33aa1cd46 100644
 --- a/components/ntp_snippets/features.cc
 +++ b/components/ntp_snippets/features.cc
 @@ -39,7 +39,7 @@ const base::Feature* const kAllFeatures[] = {

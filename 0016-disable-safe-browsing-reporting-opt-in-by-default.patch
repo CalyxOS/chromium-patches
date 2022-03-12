@@ -1,14 +1,14 @@
-From f56400d0736fe5e672b865960ec4f64e1a2b3072 Mon Sep 17 00:00:00 2001
+From d7f65d9d23ae4488022a46dd929a7f03fd5bddcb Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 12 Jul 2019 05:22:11 -0400
-Subject: [PATCH 18/21] disable safe browsing reporting opt-in by default
+Subject: [PATCH 16/19] disable safe browsing reporting opt-in by default
 
 ---
  components/safe_browsing/core/common/safe_browsing_prefs.cc | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/safe_browsing/core/common/safe_browsing_prefs.cc b/components/safe_browsing/core/common/safe_browsing_prefs.cc
-index bacfcd99cf..a4917e075a 100644
+index 971d442498..49710fd4ea 100644
 --- a/components/safe_browsing/core/common/safe_browsing_prefs.cc
 +++ b/components/safe_browsing/core/common/safe_browsing_prefs.cc
 @@ -196,7 +196,7 @@ void RegisterProfilePrefs(PrefRegistrySimple* registry) {
