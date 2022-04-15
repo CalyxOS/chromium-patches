@@ -1,13 +1,13 @@
-From db434b1ef8de43ba5975ce52670e1b58dca09830 Mon Sep 17 00:00:00 2001
+From 25e3cdd44005281e7eaad0559b2f988efd1dfc71 Mon Sep 17 00:00:00 2001
 From: csagan5 <32685696+csagan5@users.noreply.github.com>
 Date: Sun, 26 Nov 2017 22:51:43 +0100
 Subject: [PATCH 03/19] disable first run welcome page
 
 ---
- .../chrome/browser/firstrun/FirstRunUtils.java       |  3 ---
- .../browser/firstrun/ToSAndUMAFirstRunFragment.java  | 12 ------------
- .../chrome/browser/firstrun/FirstRunStatus.java      |  7 +++++--
- 3 files changed, 5 insertions(+), 17 deletions(-)
+ .../chrome/browser/firstrun/FirstRunUtils.java     |  3 ---
+ .../firstrun/ToSAndUMAFirstRunFragment.java        | 14 --------------
+ .../chrome/browser/firstrun/FirstRunStatus.java    |  7 +++++--
+ 3 files changed, 5 insertions(+), 19 deletions(-)
 
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunUtils.java b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunUtils.java
 index df973d0cfe..1669531359 100644
@@ -30,28 +30,37 @@ index df973d0cfe..1669531359 100644
  
      /**
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/ToSAndUMAFirstRunFragment.java b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/ToSAndUMAFirstRunFragment.java
-index 3650798158..95bbd80eee 100644
+index afec7accbe..923c8d01ef 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/ToSAndUMAFirstRunFragment.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/ToSAndUMAFirstRunFragment.java
-@@ -92,18 +92,6 @@ public class ToSAndUMAFirstRunFragment
+@@ -94,11 +94,6 @@ public class ToSAndUMAFirstRunFragment
  
+         // Register event listeners.
          mAcceptButton.setOnClickListener((v) -> onTosButtonClicked());
- 
--        mSendReportCheckBox.setChecked(mAllowCrashUpload);
 -        mSendReportCheckBox.setOnCheckedChangeListener(
 -                ((compoundButton, isChecked) -> mAllowCrashUpload = isChecked));
+-
+-        // Make TextView links clickable.
+-        mTosAndPrivacy.setMovementMethod(LinkMovementMethod.getInstance());
+ 
+         updateView();
+ 
+@@ -267,15 +262,6 @@ public class ToSAndUMAFirstRunFragment
+     private void updateReportCheckbox(
+             boolean umaDialogMayBeShown, boolean isMetricsReportingDisabledByPolicy) {
+         mAllowCrashUpload = getUmaCheckBoxInitialState();
+-        mSendReportCheckBox.setChecked(mAllowCrashUpload);
+-
 -        if (!canShowUmaCheckBox()) {
--            if (!FREMobileIdentityConsistencyFieldTrial.shouldShowOldFreWithUmaDialog()) {
--                mAllowCrashUpload = sShowUmaCheckBoxForTesting || VersionInfo.isOfficialBuild();
+-            if (!umaDialogMayBeShown) {
+-                mAllowCrashUpload = (sShowUmaCheckBoxForTesting || VersionInfo.isOfficialBuild())
+-                        && !isMetricsReportingDisabledByPolicy;
 -            }
 -            mSendReportCheckBox.setVisibility(View.GONE);
 -        }
--
--        mTosAndPrivacy.setMovementMethod(LinkMovementMethod.getInstance());
--
-         Resources resources = getResources();
-         final boolean showUmaDialog =
-                 FREMobileIdentityConsistencyFieldTrial.shouldShowOldFreWithUmaDialog();
+     }
+ 
+     private void openUmaDialog() {
 diff --git a/chrome/browser/first_run/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunStatus.java b/chrome/browser/first_run/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunStatus.java
 index 13bec9f270..69cf072c3f 100644
 --- a/chrome/browser/first_run/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunStatus.java
@@ -71,5 +80,5 @@ index 13bec9f270..69cf072c3f 100644
  
      /**
 -- 
-2.35.1
+2.35.3
 

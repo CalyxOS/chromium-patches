@@ -1,4 +1,4 @@
-From 34e71235416ef94eaba4e3251d4db221f0b0677d Mon Sep 17 00:00:00 2001
+From d1d7a683b45e852b5d6a6c6f786dab175924394e Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 16 Jun 2019 15:57:29 -0400
 Subject: [PATCH 12/19] disable sensors access by default
@@ -21,5 +21,5 @@ index f6ae469fca..0f59b2bed8 100644
             ValidSettings(CONTENT_SETTING_ALLOW, CONTENT_SETTING_BLOCK),
             WebsiteSettingsInfo::SINGLE_ORIGIN_ONLY_SCOPE,
 -- 
-2.35.1
+2.35.3
 

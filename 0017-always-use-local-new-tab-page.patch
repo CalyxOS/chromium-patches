@@ -1,4 +1,4 @@
-From 9b5f7b029089df4ad35c71c4d6f523743fb0f8d0 Mon Sep 17 00:00:00 2001
+From 234e191dfd60f587a223206ffc137454a0a2a3cb Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 17 Jun 2019 13:14:22 -0400
 Subject: [PATCH 17/19] always use local new tab page
@@ -21,5 +21,5 @@ index 44543b3d1c..bec94418b6 100644
  }
  
 -- 
-2.35.1
+2.35.3
 
