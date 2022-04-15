@@ -1,0 +1,36 @@
+From b32d8e7d4d3a47f3c821271b23fc464c43d48993 Mon Sep 17 00:00:00 2001
+From: Chirayu Desai <chirayudesai1@gmail.com>
+Date: Fri, 15 Apr 2022 18:29:36 +0530
+Subject: [PATCH 20/20] [TMP] build: Remove f string usage
+
+* FAILED: gen/chrome/android/trichrome_library_apk_manifest/AndroidManifest.xml.normalized failed_expectations/expectations_trichrome_library_apk.AndroidManifest.expected
+  python3 ../../build/android/gyp/compile_resources.py ...
+    File "<fstring>", line 1
+      (exit_code=)
+                ^
+  SyntaxError: invalid syntax
+* This is failing on the server for some reason, fine locally
+  Broken: Python 3.7.3
+  Working: Python 3.10.4
+
+Partially reverts: 3472285: Android: Fix downstream material roll | https://chromium-review.googlesource.com/c/chromium/src/+/3472285
+---
+ build/android/gyp/compile_resources.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/build/android/gyp/compile_resources.py b/build/android/gyp/compile_resources.py
+index 28595bf74c..901321af28 100755
+--- a/build/android/gyp/compile_resources.py
++++ b/build/android/gyp/compile_resources.py
+@@ -832,7 +832,7 @@ def _PackageApk(options, build):
+   logging.debug('Created .res.info file')
+ 
+   exit_code = link_proc.wait()
+-  assert exit_code == 0, f'aapt2 link cmd failed with {exit_code=}'
++  assert exit_code == 0
+   logging.debug('Finished: aapt2 link')
+ 
+   if options.shared_resources:
+-- 
+2.35.3
+
